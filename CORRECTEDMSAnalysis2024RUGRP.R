@@ -163,11 +163,11 @@ print(colnames(EXPLORIS_DDA_combined_peptide))
 print(colnames(TIMSTOF15CM_DDA_combined_peptide))
 print(TIMSTOF15CM_DIA_PROTEIN_GROUP)
 
-#Trans-platform analysis between DIA exploris vs timstof
+#Trans-platform analysis between DDA exploris vs timstof
 EXPLORIS_DIA_STAT_REPORT <-read_tsv("C:/Users/Umar/Desktop/R_Studio/RP_RUG_2024/Fragpipe_output/Exploris_DIA_analysis_output/diann-output/report.stats.tsv")
 EXPLORIS_DIA_PROTEIN_GROUP <-read_tsv("C:/Users/Umar/Desktop/R_Studio/RP_RUG_2024/Fragpipe_output/Exploris_DIA_analysis_output/diann-output/report.pg_matrix.tsv")
 
-#Trans-platform analysis between DIA exploris vs timstof
+#Trans-platform analysis between DDA exploris vs timstof
 EXPLORIS_TOTAL_PROTEIN_T <- EXPLORIS_DDA_combined_protein$`Protein ID`  #extracting protein ID from exploris
 TIMSTOF15CM_TOTAL_PROTEIN_T <- TIMSTOF15CM_DDA_combined_protein$`Protein ID` #extracting protein ID from timstof 15cm
 UPSET_INPUT <- list(Exploris=EXPLORIS_TOTAL_PROTEIN_T, TimsTOF15cm=TIMSTOF15CM_TOTAL_PROTEIN_T)
