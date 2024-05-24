@@ -181,3 +181,13 @@ UPSET_INPUT <- list(Exploris_DDA=EXPLORIS_DDA_TOTAL_PROTEIN_T, TimsTOF15cm_DDA=T
 list_to_matrix(UPSET_INPUT)
 
 upset(fromList(UPSET_INPUT), order.by = "freq")
+
+{ggplot(summary_stats, aes(x = Platform, y = Mean)) +
+  geom_bar(stat = "identity", fill = "lightblue", width = 0.5) +
+  geom_errorbar(aes(ymin = Mean - SD, ymax = Mean + SD), width = 0.2, color = "black") +
+  geom_point(aes(y = Median), color = "red", size = 3) +
+  labs(title = "Summary Statistics for Precursors Identified",
+       x = "Platform",
+       y = "Mean",
+       caption = "Error bars represent standard deviation") +
+  theme_minimal()}
